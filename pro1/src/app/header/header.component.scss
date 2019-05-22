@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    background-color: #444;
+    padding: 10px 0;
+    & h1{
+        color: #fff;
+        font: 22px Tahoma;
+        padding: 0 15px;
+    }
+}
