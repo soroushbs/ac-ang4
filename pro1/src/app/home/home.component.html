@@ -1,3 +1,30 @@
-<p>
-  home works!
-</p>
+<div class="commentInp">
+  <p>
+    comment:
+  </p>
+  <div>
+    <input type="text" #cminput>
+  </div>
+  <div>
+    <button (click)="submitcmnt()">
+      Submit ...
+    </button>
+  </div>
+</div>
+<div class="cm-items" *ngIf="nor != 0" >
+    <div class="cm-item" *ngFor="let i of nmcomment">
+      <p>{{i.comment}}</p>
+      <div class="cm-item-like">
+        <span>like:</span> {{i.like}}
+      </div>
+      <div class="cm-item-dis">
+        <span>dislike:</span> {{i.dislike}}
+      </div>
+      <div class="cm-item-rating">
+        rating: <input #ratinginput (keyup.enter)="ratingcount(i,ratinginput)" type="number" max="5" min="0">
+      </div>
+      <div class="cm-item-star">
+        <app-star [rating]="ratinginput.value"></app-star>
+      </div>
+    </div>
+  </div>
